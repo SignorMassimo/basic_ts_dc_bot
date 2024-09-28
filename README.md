@@ -17,8 +17,8 @@ Bu proje, **Zexson Team** tarafından geliştirilmiş, Discord.js v14 kullanarak
 1. **Depoyu Klonlayın:**
 
    ```bash
-   git clone https://github.com/kullaniciadi/discord-bot-altyapisi.git
-   cd discord-bot-altyapisi
+   gh repo clone SignorMassimo/basic_ts_dc_bot
+   cd basic_ts_dc_bot
    ```
 
 2. **Gerekli Bağımlılıkları Yükleyin:**
