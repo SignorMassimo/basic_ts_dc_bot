@@ -1,16 +1,17 @@
 
 ---
 
-# Discord.js Bot Altyapısı
+# Discord.js Bot Altyapısı (TypeScript)
 
-Bu proje, **Zexson Team** tarafından geliştirilmiş, Discord.js v14 kullanarak oluşturulmuş basit ve genişletilebilir bir Discord botu altyapısıdır. Bot, belirli komutları işleyebilecek şekilde yapılandırılmıştır ve örnek bir `ping` komutuyla yanıt verebilir.
+Bu proje, **Zexson Team** tarafından geliştirilmiş, Discord.js v14 kullanarak oluşturulmuş basit ve genişletilebilir bir Discord botu **TypeScript** altyapısıdır. Bot, genişletmeye uygun boş bir template olarak sunulmuştur ve sadece `app.ts` dosyasını içerir.
 
 ## Özellikler
 
-- **Basit ve Hızlı Kurulum:** .env dosyası ile kolayca yapılandırma yapılabilir.
+- **TypeScript Desteği:** Proje tamamen TypeScript ile yazılmıştır.
+- **Basit ve Hızlı Kurulum:** `.env` dosyası ile kolayca yapılandırma yapılabilir.
 - **Genişletilebilir Altyapı:** Yeni komutlar ve özellikler eklemeye uygun.
-- **Bot Etkinlikleri:** Botun çevrimiçi olduğu anda bir mesaj ile konsola bilgilendirme gönderir.
-- **Ping Komutu:** `ping` mesajına otomatik olarak `pong` yanıtını verir.
+- **Hazır Eventler:** `ready` ve `messageCreate` eventleri ile hızlı başlangıç.
+- **TypeScript ile Daha Güvenli Kodlama:** Tip güvenliği ve derleme sırasında hata kontrolü.
 
 ## Kurulum
 
@@ -43,18 +44,57 @@ Bu proje, **Zexson Team** tarafından geliştirilmiş, Discord.js v14 kullanarak
 
    Bot başarılı bir şekilde giriş yaptığında, konsolda botun kullanıcı adı görüntülenecektir.
 
+## Scripts
+
+Proje ile birlikte gelen bazı faydalı scriptler şunlardır:
+
+- **Başlatma:**
+  
+  ```bash
+  npm start
+  ```
+
+  Bu komut ile `nodemon` kullanarak botu başlatır ve dosya değişikliklerinde otomatik olarak yeniden başlatır.
+
+- **Derleme (Build):**
+
+  ```bash
+  npm run build
+  ```
+
+  TypeScript kodlarını JavaScript'e derler.
+
+## `tsconfig.json` Dosyası
+
+Proje, TypeScript ile yazıldığı için `tsconfig.json` dosyasında bazı temel ayarlar yapılmıştır. Derleme sırasında TypeScript dosyaları `dist` klasörüne taşınacak şekilde yapılandırılmıştır.
+
+#### Temel Ayarlar
+
+- **`target: "ES6"`**: TypeScript'in JavaScript'e derlenirken ES6 (ECMAScript 2015) standartlarını kullanmasını sağlar.
+- **`module: "commonjs"`**: Modül sistemini CommonJS olarak ayarlar.
+- **`outDir: "./dist"`**: Derlenen JavaScript dosyalarının `dist` klasörüne yerleştirilmesini sağlar.
+- **`strict: true"`**: TypeScript'in tip kontrolünü daha katı yapmasını sağlar.
+- **`esModuleInterop: true`**: CommonJS ve ES modülleri arasında uyumluluk sağlar.
+
+#### Dosya Dahil Etme ve Hariç Tutma
+
+- **`include: ["**/*.ts"]`**: Projedeki tüm TypeScript (`.ts`) dosyalarını derleme sürecine dahil eder.
+- **`exclude: ["node_modules", "dist"]`**: `node_modules` ve `dist` klasörlerindeki dosyaları derleme sürecinden hariç tutar.
+
+Bu ayarlar, TypeScript dosyalarını derlediğinizde tüm `.ts` dosyalarının JavaScript'e dönüştürülüp `dist` klasörüne taşınmasını sağlar. TypeScript ile güçlü tip güvenliği ve daha güvenli kod yazabilirsiniz.
+
 ## Kullanım
 
-- Bot çevrimiçi olduğunda, herhangi bir kanalda `ping` yazdığınızda, bot `pong` yanıtını verir.
-  
-## Geliştirme
+Bu bot altyapısı boş bir template olarak hazırlanmıştır ve varsayılan olarak herhangi bir özel komut veya işlev içermez. Geliştirmeye başlamak için `app.ts` dosyasını düzenleyebilir ve yeni eventler ekleyebilirsiniz.
 
-Bu altyapıyı genişletmek için, yeni komutlar ve eventler ekleyebilir, projenizi dilediğiniz gibi özelleştirebilirsiniz. `messageCreate` eventinde yeni komutlar ve yanıtlar tanımlayabilirsiniz.
+- Botu başlattıktan sonra, yeni komutlar eklemek için `app.ts` dosyasını kullanabilirsiniz.
+- Projeye yeni özellikler ve eventler ekleyerek genişletebilirsiniz.
 
 ## Gereksinimler
 
 - Node.js 16.9.0 veya üzeri
 - Discord.js v14
+- TypeScript desteği
 
 ## Geliştirici
 
